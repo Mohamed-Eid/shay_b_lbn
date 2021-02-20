@@ -1,0 +1,649 @@
+/* START:: GLOBAL STYLES */
+body{
+  font-family: 'Cairo', sans-serif;
+}
+
+body::-webkit-scrollbar {
+  background-color: #121212;
+  width: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #f0a500;
+}
+
+.ck.ck-editor {
+  width: 100% !important;
+}
+
+.kt-portlet .kt-portlet__head .kt-portlet__head-label .btns-box a,
+.kt-portlet .kt-portlet__head .kt-portlet__head-label .btns-box button {
+  border-color: #f0a500 !important;
+  color: #f0a500 !important;
+  transition: all 0.3s ease-in-out;
+} 
+
+.kt-portlet .kt-portlet__head .kt-portlet__head-label .btns-box a:hover,
+.kt-portlet .kt-portlet__head .kt-portlet__head-label .btns-box button:hover {
+  background-color: #f0a500 !important;
+  color: #fff !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.input-group-prepend .select2-container {
+  width: 100% !important;
+}
+
+.btn-success {
+  background-color: #f0a500 !important;
+}
+/* END:: GLOBAL STYLES */
+
+/* START:: LOGIN PAGE STYLES */
+.kt-login.kt-login--v4 {
+  background-size: cover;
+  background-repeat: no-repeat; 
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper {
+  padding: 6% 2rem 1rem 2rem;
+  margin: 0 auto 2rem auto;
+  overflow: hidden; 
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container {
+  width: 430px;
+  margin: 0 auto; 
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 3px #f0a500;;
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-login__logo {
+  text-align: center;
+  margin: 0 auto 4rem auto; 
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-login__logo .logo span{
+  color: #f0a500;
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-login__head {
+  margin-top: 1rem;
+  margin-bottom: 3rem; 
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-login__head .kt-login__title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #c1c1c1; 
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-login__head .kt-login__desc {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #c1c1c1; 
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form {
+  margin: 0 auto; 
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .input-group {
+  padding: 0;
+  margin: 0 auto; 
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .form-control {
+  height: 46px;
+  border: none;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border-radius: 46px;
+  margin-top: 1.5rem;
+  background: rgba(255, 255, 255, 0.015);
+  color: #c1c1c1; 
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .form-control::-moz-placeholder {
+  color: #c1c1c1;
+  opacity: 1; 
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .form-control:-ms-input-placeholder {
+  color: #595d6e; 
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .form-control::-webkit-input-placeholder {
+  color: #595d6e; 
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .form-control.is-valid + .valid-feedback,
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .form-control.is-invalid + .invalid-feedback {
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding-left: 1.6rem; 
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .kt-login__extra {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #74788d;
+  font-size: 1rem;
+  padding: 0 1.5rem; 
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .kt-login__extra .kt-checkbox {
+  font-size: 1rem; 
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .kt-login__extra .kt-login__link {
+  font-size: 1rem;
+  color: #74788d;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease; 
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .kt-login__extra .kt-login__link:hover {
+  color: #f0a500;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease; 
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .kt-login__actions {
+  text-align: center;
+  margin-top: 7%; 
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .kt-login__actions .kt-login__btn-secondary,
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .kt-login__actions .kt-login__btn-primary {
+  height: 50px;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  background-color: #f0a500;
+  color: #fff;
+  font-weight: bold;
+  border: none
+}
+
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .kt-login__actions .kt-login__btn-secondary {
+  background-color: transparent;
+}
+
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form .kt-login__actions .kt-login__btn-secondary:hover {
+  background-color: rgba(100, 100, 100, 0.9);
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-login__account {
+  text-align: center;
+  margin-top: 2rem; 
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-login__account .kt-login__account-msg {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #74788d; 
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-login__account .kt-login__account-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #595d6e;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease; 
+}
+
+.kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-login__account .kt-login__account-link:hover {
+  color: #f0a500;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease; 
+}
+
+.kt-login.kt-login--v4.kt-login--signin .kt-login__signup {
+  display: none; }
+
+.kt-login.kt-login--v4.kt-login--signin .kt-login__signin {
+  display: block; }
+
+.kt-login.kt-login--v4.kt-login--signin .kt-login__forgot {
+  display: none; }
+
+.kt-login.kt-login--v4.kt-login--signup .kt-login__signup {
+  display: block; }
+
+.kt-login.kt-login--v4.kt-login--signup .kt-login__signin {
+  display: none; }
+
+.kt-login.kt-login--v4.kt-login--signup .kt-login__forgot {
+  display: none; }
+
+.kt-login.kt-login--v4.kt-login--signup .kt-login__account {
+  display: none; }
+
+.kt-login.kt-login--v4.kt-login--forgot .kt-login__signup {
+  display: none; }
+
+.kt-login.kt-login--v4.kt-login--forgot .kt-login__signin {
+  display: none; }
+
+.kt-login.kt-login--v4.kt-login--forgot .kt-login__forgot {
+  display: block; }
+
+@media (max-width: 1024px) {
+  .kt-login.kt-login--v4 .kt-login__wrapper {
+    padding-top: 5rem;
+    width: 100%; 
+  }
+
+  .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container {
+    margin: 0 auto; 
+  }
+
+  .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-login__account {
+    margin-top: 1rem; 
+  } 
+}
+
+@media (max-width: 768px) {
+  .kt-login.kt-login--v4 .kt-login__wrapper {
+    width: 100%; 
+  }
+  .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container {
+    width: 100%;
+    margin: 0 auto; 
+  }
+  .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-form {
+    width: 100%;
+    margin: 0 auto; 
+  }
+  .kt-login.kt-login--v4 .kt-login__wrapper .kt-login__container .kt-login__account {
+    margin-top: 1rem; 
+  } 
+}
+/* END:: LOGIN PAGE STYLES */
+
+/* START:: MOBILE CUSTOMIZE MENU STYLES */
+.kt-header-mobile {
+  background-color: #333;;
+}
+
+.kt-header-mobile .kt-header-mobile__toolbar .kt-header-mobile__toolbar-topbar-toggler.kt-header-mobile__toolbar-topbar-toggler--active i, 
+.kt-header-mobile .kt-header-mobile__toolbar .kt-header-mobile__toolbar-topbar-toggler:hover i {
+  color: #f0a500; 
+}
+
+.kt-header-mobile .kt-header-mobile__toolbar .kt-header-mobile__toolbar-toggler:hover span,
+.kt-header-mobile .kt-header-mobile__toolbar .kt-header-mobile__toolbar-toggler.kt-header-mobile__toolbar-toggler--left:hover span:before,
+.kt-header-mobile .kt-header-mobile__toolbar .kt-header-mobile__toolbar-toggler.kt-header-mobile__toolbar-toggler--left:hover span:after {
+  background: #f0a500;
+}
+
+.kt-header__topbar--mobile-on .kt-header__topbar {
+  background: rgb(54, 63, 57);
+  border-top: 1px solid #f0a500;
+}
+
+#kt_header_mobile .kt-header-mobile__logo a h3 {
+  color: #fff;
+}
+
+#kt_header_mobile .kt-header-mobile__logo a h3 span {
+  color: #f0a500;
+}
+
+.kt-aside-close {
+  background-color: transparent;
+}
+
+.kt-aside-close:hover {
+  background-color: transparent;
+}
+
+.kt-aside-close > i {
+  color: #f0a500;
+}
+/* END:: MOBILE CUSTOMIZE MENU STYLES */
+
+/*  START:: CUSTOMIZE HEADER STYLE  */
+#kt_header {
+  justify-content: flex-end;
+}
+
+.kt-header {
+  background-color: #333;
+}
+
+.kt-header__topbar .kt-header__topbar-item .kt-header__topbar-icon i {
+  color: #fff;
+}
+
+.kt-header__topbar .kt-header__topbar-item:hover .kt-header__topbar-icon, 
+.kt-header__topbar .kt-header__topbar-item.show .kt-header__topbar-icon {
+  background-color: transparent;
+  
+}
+
+.kt-header__topbar .kt-header__topbar-item:hover i {
+  color: #f0a500 !important;
+}
+
+.kt-nav .kt-nav__item.kt-nav__item--active > .kt-nav__link, 
+.kt-nav .kt-nav__item.active > .kt-nav__link, 
+.kt-nav .kt-nav__item:hover:not(.kt-nav__item--disabled):not(.kt-nav__item--sub) > .kt-nav__link
+{
+  background-color: transparent;
+}
+
+.kt-nav .kt-nav__item.kt-nav__item--active > .kt-nav__link .kt-nav__link-icon, 
+.kt-nav .kt-nav__item.kt-nav__item--active > .kt-nav__link .kt-nav__link-text, 
+.kt-nav .kt-nav__item.kt-nav__item--active > .kt-nav__link .kt-nav__link-arrow, 
+.kt-nav .kt-nav__item.active > .kt-nav__link .kt-nav__link-icon, 
+.kt-nav .kt-nav__item.active > .kt-nav__link .kt-nav__link-text, 
+.kt-nav .kt-nav__item.active > .kt-nav__link .kt-nav__link-arrow, 
+.kt-nav .kt-nav__item:hover:not(.kt-nav__item--disabled):not(.kt-nav__item--sub) > .kt-nav__link .kt-nav__link-icon, 
+.kt-nav .kt-nav__item:hover:not(.kt-nav__item--disabled):not(.kt-nav__item--sub) > .kt-nav__link .kt-nav__link-text, 
+.kt-nav .kt-nav__item:hover:not(.kt-nav__item--disabled):not(.kt-nav__item--sub) > .kt-nav__link .kt-nav__link-arrow
+{
+  color: #f0a500;
+}
+/*  END:: CUSTOMIZE HEADER STYLE  */
+
+/*  START:: CUSTOMIZE SUBHEADER STYLE  */
+
+.kt-subheader .kt-subheader__btn-daterange .kt-subheader__btn-daterange-date,
+.kt-subheader .kt-subheader__main .kt-subheader__title a
+{
+  color: #f0a500;
+}
+
+.kt-svg-icon g [fill] {
+  fill: #f0a500;
+}
+/*  END:: CUSTOMIZE SUBHEADER STYLE  */
+
+/* START:: CUSTOMIZE ASIDE STYLE */
+.kt-aside__brand {
+  background-color: #333;
+}
+
+.kt-aside--minimize .kt-aside__brand .kt-aside__brand-logo img,
+.kt-aside--minimize .kt-aside__brand .kt-aside__brand-logo h3 {
+  display: none;
+}
+
+.kt-grid.kt-grid--hor-desktop.kt-grid--desktop > #kt_aside_brand {
+  align-items: center;
+}
+
+.kt-aside__brand .kt-aside__brand-tools .kt-aside__brand-aside-toggler span,
+.kt-aside__brand .kt-aside__brand-tools .kt-aside__brand-aside-toggler span::before, 
+.kt-aside__brand .kt-aside__brand-tools .kt-aside__brand-aside-toggler span::after 
+{
+  background: #f0a500;
+}
+
+.kt-grid.kt-grid--hor-desktop.kt-grid--desktop > #kt_aside_brand .kt-aside__brand-logo h3 {
+  margin: 0;
+}
+
+.kt-grid.kt-grid--hor-desktop.kt-grid--desktop > #kt_aside_brand .kt-aside__brand-logo h3 span {
+  color: #f0a500;
+  font-weight: 600;
+}
+/* END:: CUSTOMIZE ASIDE STYLE */
+
+/* START:: CUSTOMIZE ASIDEMENU STYLE*/
+.kt-aside-menu {
+  background-color: #212121;
+}
+
+.kt-aside .ps > .ps__rail-y > .ps__thumb-y {
+  background-color: #666 !important;
+}
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--active > .kt-menu__heading, 
+.kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--active > .kt-menu__link {
+  background-color: #f0a500;
+  margin-bottom: 10px;
+}
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--active > .kt-menu__heading .kt-menu__link-icon, 
+.kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--active > .kt-menu__link .kt-menu__link-icon,
+.kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--active > .kt-menu__heading .kt-menu__link-text, 
+.kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--active > .kt-menu__link .kt-menu__link-text {
+  color: #fff;
+  font-weight: 600;
+}
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item > .kt-menu__heading .kt-menu__link-icon, 
+.kt-aside-menu .kt-menu__nav > .kt-menu__item > .kt-menu__link .kt-menu__link-icon,
+.kt-aside-menu .kt-menu__nav > .kt-menu__item > .kt-menu__heading .kt-menu__link-text, 
+.kt-aside-menu .kt-menu__nav > .kt-menu__item > .kt-menu__link .kt-menu__link-text {
+  color: #fff
+}
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__heading, 
+.kt-aside-menu .kt-menu__nav > .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__link {
+  background-color: #f0a500;
+}
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__heading .kt-menu__link-icon, 
+.kt-aside-menu .kt-menu__nav > .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__link .kt-menu__link-icon,
+.kt-aside-menu .kt-menu__nav > .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__heading .kt-menu__link-text, 
+.kt-aside-menu .kt-menu__nav > .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__link .kt-menu__link-text {
+  color: #fff;
+}
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--open > .kt-menu__heading, 
+.kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--open > .kt-menu__link {
+  background-color: #444;
+}
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item > .kt-menu__heading .kt-menu__ver-arrow, 
+.kt-aside-menu .kt-menu__nav > .kt-menu__item > .kt-menu__link .kt-menu__ver-arrow {
+  color: #fff;
+  font-size: 14px;
+}
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--open > .kt-menu__heading .kt-menu__link-icon, 
+.kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--open > .kt-menu__link .kt-menu__link-icon {
+  color: #fff;
+}
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item > .kt-menu__submenu .kt-menu__subnav > .kt-menu__item > .kt-menu__link {
+  padding: 15px 30px;
+  color: #fff;
+  background-color: transparent;
+}
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item .kt-menu__submenu .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__heading, 
+.kt-aside-menu .kt-menu__nav > .kt-menu__item .kt-menu__submenu .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__link
+{
+  background-color: #f0a500;
+}
+
+@media (min-width: 1025px) {
+  .kt-aside--minimize .kt-aside-menu .kt-menu__nav > .kt-menu__item > .kt-menu__link > .kt-menu__link-icon {
+    color: #fff;
+  }
+}
+/* END:: CUSTOMIZE ASIDEMENU STYLE*/
+
+/* START:: CUSTOMIZE MAIN SECTION STYLE */
+.kt-container .kt-portlet {
+  min-height: 390px;
+}
+
+.kt-container .kt-portlet .kt-portlet__head .title-container a,
+.kt-container .kt-portlet .kt-portlet__head .title-container button {
+  border-color: #f0a500 !important;
+  color: #f0a500 !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.kt-container .kt-portlet .kt-portlet__head .title-container a:hover,
+.kt-container .kt-portlet .kt-portlet__head .title-container button:hover 
+{
+  background-color: #f0a500 !important;
+  color: #fff !important;
+  transition: all 0.3s ease-in-out;
+}
+/* END:: CUSTOMIZE MAIN SECTION STYLE */
+
+/* START:: CUSTOMIZE DATATABLE STYLE */
+.dataTables_wrapper {
+  padding: 2rem !important;
+}
+
+.dataTables_wrapper .dataTables_filter input,
+.dataTables_wrapper .dataTables_length select {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #f0a500;
+  margin: 5px;
+}
+
+.dataTables_wrapper .dataTables_filter input:focus,
+.dataTables_wrapper .dataTables_length select {
+  outline: none;
+}
+
+.dataTables_wrapper .dataTables_length select option:hover {
+  background-color: #ccc !important;
+}
+
+table.dataTable.no-footer {
+  border: 1px solid #ececec;
+}
+
+.table .thead-dark th {
+  color: #fff;
+}
+
+table.dataTable thead .sorting.action,
+table.dataTable thead .sorting_desc.action,
+table.dataTable thead .sorting_asc.action {
+  background-image: none;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  color: #fff !important;
+  background: #f0a500;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+  color: #f0a500 !important;
+  border: 1px solid #f0a500 !important;
+  background: transparent !important;
+  transition: all 0.2s ease-in-out;
+}
+
+table.dataTable td .kt-badge {
+  width: 35px;
+  height: 35px;
+  margin: 2px;
+}
+
+table.dataTable td .kt-badge i {
+  font-size: 18px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background: #fff !important;
+  color: #f0a500 !important;
+  border: none !important;
+  font-weight: 600 !important;
+}
+/* END:: CUSTOMIZE DATATABLE STYLE */
+
+/* START:: CUSTOMIZE HR ADD NEW EMPLOYEE PAGE STYLE */
+
+    /* START:: CUSTOMIZE UPLOAD FILES BUTTON STYLE*/
+label.btn.btn-label-brand, a.btn.btn-label-brand, 
+button.btn.btn-label-brand, 
+input.btn.btn-label-brand {
+  background-color: #f0a5008f;
+  color: #fff;
+}
+
+label.btn.btn-label-brand:focus, 
+label.btn.btn-label-brand:hover, 
+label.btn.btn-label-brand.active, 
+a.btn.btn-label-brand:focus, 
+a.btn.btn-label-brand:hover, 
+a.btn.btn-label-brand.active, 
+button.btn.btn-label-brand:focus, 
+button.btn.btn-label-brand:hover, 
+button.btn.btn-label-brand.active, 
+input.btn.btn-label-brand:focus,
+input.btn.btn-label-brand:hover, 
+input.btn.btn-label-brand.active {
+  background-color: #f0a500;
+}
+    /* END:: CUSTOMIZE UPLOAD FILES BUTTON STYLE*/
+
+/* END:: CUSTOMIZE HR ADD NEW EMPLOYEE PAGE STYLE */
+
+/* START:: CUSTOMIZE HR ACCOUNTING PAGE STYLE */
+.kt-container .financ-container {
+  min-height: 200px !important;
+  max-height: 200px !important;
+}
+
+.kt-iconbox .kt-iconbox__body {
+  flex-direction: column;
+  text-align: center;
+}
+
+.kt-iconbox .kt-iconbox__body .kt-iconbox__icon {
+  padding: 0;
+  margin-bottom: 5px;
+}
+
+.kt-iconbox .kt-iconbox__body .kt-iconbox__desc .kt-iconbox__title {
+  font-size: 1.3rem;
+}
+/* END:: CUSTOMIZE HR ACCOUNTING PAGE STYLE */
+
+/* START:: CUSTOMIZE SCROLLTOP STYLE */
+.kt-scrolltop {
+  background: #f0a500;
+}
+/* END:: CUSTOMIZE SCROLLTOP STYLE */
+
+
+.field_img {display: block; box-shadow: inherit; background: transparent;}
+.field_img:before, .field_img:after {content: ""; display: table; clear: both;}
+.field_img > input {
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.04);
+    width: 100%;
+    padding: 15px 5px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+	display: none;
+}
+
+.field_img label {position: relative; text-align: center;}
+.field_img label .img-hover {
+    position: absolute;
+    left: 0;
+    right: 0;
+    line-height: 120px;
+    top: 0;
+    font-size: 33px;
+    background: rgba(41, 59, 143, 0.7);
+    border-radius: 10px;
+    opacity: 0;
+	transition: opacity .3s linear 0s;
+    cursor: pointer;
+}
+.field_img img {max-width: 120px; height: 120px; border-radius: 10px;}
+.field_img label:hover .img-hover {opacity: 0.7;}
