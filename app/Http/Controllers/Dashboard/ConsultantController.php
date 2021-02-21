@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Available;
 use App\Consultant;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateConsultantRequest;
@@ -38,16 +39,31 @@ class ConsultantController extends Controller
     public function store(CreateConsultantRequest $request)
     {
         // dd($request->all());
-        $data = $request->except('image');
+        $data = $request->except(['image','availables']);
         
         $data['image'] = upload_image_without_resize('consultants',$request->image);
         
-        Consultant::create($data);
+        $consultant = Consultant::create($data);
+
+
+        if($request->availables){
+            foreach ($this->process_availables($request) as $available) {
+                $consultant->availables()->create($available);
+            }
+        }
 
         return redirect()->back()->with('success','تمت الإضافة بنجاح');
 
     }
 
+    function process_availables(Request $request){
+        $data = [];
+        foreach ($request->availables as $key => $available) {
+            $data[$key]['available_date'] = $available['available_date'];
+            $data[$key]['available_time'] = $available['available_time'];
+        }
+        return $data;
+    }
     /**
      * Display the specified resource.
      *
@@ -65,9 +81,9 @@ class ConsultantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Consultant $consultant)
     {
-        //
+        return view('dashboard.consultants.edit',compact('consultant'));
     }
 
     /**
@@ -77,9 +93,38 @@ class ConsultantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Consultant $consultant)
     {
-        //
+        // dd($request->all());
+        $data = $request->except(['image','availables','old_availables']);
+        
+        if ($request->image) {
+            delete_image('consultants',$consultant->iamge);
+            $data['image'] = upload_image_without_resize('consultants',$request->image);
+        }
+        
+
+        if($request->availables){
+            foreach ($this->process_availables($request) as $available) {
+                $consultant->availables()->create($available);
+            }
+        }
+
+        $consultant->update($data);
+
+
+
+        if($request->old_availables){
+            foreach ($request->old_availables as $key => $value) {
+                $av_data = [];
+                $old_available = Available::find($key);
+                $av_data['available_date'] = $value['available_date'];
+                $av_data['available_time'] = $value['available_time'];
+                $old_available->update($av_data);
+            }
+        }
+
+        return redirect()->back()->with('success','تم الحفظ بنجاح');
     }
 
     /**
@@ -88,8 +133,14 @@ class ConsultantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Consultant $consultant)
     {
-        //
+        if ($consultant->image != 'default.png' ) {
+            delete_image('consultants',$consultant->image);
+        }
+
+        $consultant->delete();
+
+        return redirect()->back()->with('success','تم الحذف بنجاح'); 
     }
 }

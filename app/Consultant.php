@@ -20,4 +20,8 @@ class Consultant extends Model implements TranslatableContract
     public  function getImagePathAttribute(){
         return asset('uploads/consultants/'.$this->image);
     }
+
+    public function availables(){
+        return $this->hasMany(Available::class);
+    }
 }
