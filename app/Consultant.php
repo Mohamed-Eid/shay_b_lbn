@@ -6,7 +6,7 @@ use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
 
-class Consultantant extends Model implements TranslatableContract
+class Consultant extends Model implements TranslatableContract
 {
     use Translatable;
 
@@ -15,9 +15,9 @@ class Consultantant extends Model implements TranslatableContract
 
     protected $guarded = [];
 
+    public $casts = ['badges'=> 'array'];
 
     public  function getImagePathAttribute(){
-        return asset('uploads/consultantants/'.$this->image);
+        return asset('uploads/consultants/'.$this->image);
     }
-
 }
