@@ -37,6 +37,7 @@ class ConsultantController extends Controller
      */
     public function store(CreateConsultantRequest $request)
     {
+        // dd($request->all());
         $data = $request->except('image');
         
         $data['image'] = upload_image_without_resize('consultants',$request->image);

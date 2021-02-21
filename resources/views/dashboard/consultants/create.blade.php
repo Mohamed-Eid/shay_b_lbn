@@ -110,6 +110,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group col-12 col-md-12">
+                            <div class="row">
+                                <label class="col-form-label col-12"> البادج </label>
+                                <div class="input-group-prepend col-12">
+                                    <span class="input-group-text"> <i class="la la-user" style="font-size: 18px"></i> </span>
+                                    <select class="form-control kt-selectpicker" name="badges" data-size="3" data-live-search="true" multiple>
+                                        <option value="selected_badge"> selected badge  </option>
+                                        <option value="recent_badge"> recent badge    </option>
+                                        <option value="our_stars_badge"> our stars badge </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="form-group col-12 col-md-6">
                             <div class="row">
                                 <label class="col-form-label col-12">رقم الهاتف</label>
@@ -168,6 +182,7 @@
                                 </div>
                             </div>
                         </div>
+
 
 
                         <div class="form-group col-12 px-4">
