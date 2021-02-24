@@ -16,6 +16,11 @@ class ClientController extends Controller
 
     use ApiResponse;
 
+
+    public function index(){
+        return ClientResource::collection(Client::all());
+    }
+
     public function register(Request $request)
     {
 

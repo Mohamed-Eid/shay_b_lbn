@@ -24,4 +24,8 @@ class Consultant extends Model implements TranslatableContract
     public function availables(){
         return $this->hasMany(Available::class);
     }
+
+    public function visits(){
+        return $this->hasMany(Visit::class);
+    }
 }

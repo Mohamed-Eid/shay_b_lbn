@@ -22,6 +22,7 @@ class ClientResource extends JsonResource
             'image'                => $this->image ? $this->image_path : null,
             'age'                  => $this->age,
             'dob'                  => $this->age,
+            'visits'               => VisitResource::collection($this->visits),
             'gender'               => $this->gender,
             'status'               => $this->status,
             'api_token'            => $this->api_token,

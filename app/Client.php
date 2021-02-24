@@ -14,4 +14,8 @@ class Client extends Model
         return asset('uploads/clients/'.$this->image);
     }
 
+    public function visits(){
+        return $this->hasMany(Visit::class);
+    }
+
 }

@@ -29,3 +29,6 @@ Route::prefix('consultants')->group(function () {
     Route::get('{consultant}','Api\ConsultantController@show');
 
 });
+
+
+Route::resource('visits', 'Api\VisitController')->middleware('authorizeclient');
