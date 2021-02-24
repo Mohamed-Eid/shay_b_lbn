@@ -129,38 +129,8 @@
                     <!-- START:: HEADER TOPBAR -->
                     <div class="kt-header__topbar">
 
-                        <!--START:: SEARCH -->
-                        <div class="kt-header__topbar-item kt-header__topbar-item--search dropdown"
-                            id="kt_quick_search_toggle">
-                            <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
-                                <span class="kt-header__topbar-icon">
-                                    <i class="flaticon2-search-1"></i>
-                                </span>
-                            </div>
-                            <div
-                                class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-lg">
-                                <div class="kt-quick-search kt-quick-search--dropdown kt-quick-search--result-compact"
-                                    id="kt_quick_search_dropdown">
-                                    <form method="get" class="kt-quick-search__form">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend"><span class="input-group-text"><i
-                                                        class="flaticon2-search-1"></i></span></div>
-                                            <input type="text" class="form-control kt-quick-search__input"
-                                                placeholder="Search...">
-                                            <div class="input-group-append"><span class="input-group-text"><i
-                                                        class="la la-close kt-quick-search__close"></i></span></div>
-                                        </div>
-                                    </form>
-                                    <div class="kt-quick-search__wrapper kt-scroll" data-scroll="true" data-height="325"
-                                        data-mobile-height="200">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--END:: SEARCH -->
-
                         <!--START:: NOTIFICATIONS -->
-                        <div class="kt-header__topbar-item dropdown">
+                        {{-- <div class="kt-header__topbar-item dropdown">
                             <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="30px,0px"
                                 aria-expanded="true">
                                 <span class="kt-header__topbar-icon kt-pulse kt-pulse--brand">
@@ -183,7 +153,7 @@
                                 </ul>
 
                             </div>
-                        </div>
+                        </div> --}}
                         <!--END:: NOTIFICATIONS -->
 
 
@@ -191,7 +161,7 @@
                         <div class="kt-header__topbar-item kt-header__topbar-item--user">
                             <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
                                 <div class="kt-header__topbar-user">
-                                    <span class="kt-header__topbar-username kt-hidden-mobile">محمود سليمان</span>
+                                    <span class="kt-header__topbar-username kt-hidden-mobile">{{ auth()->user()->name }}</span>
                                     <img alt="Pic" class="kt-radius-100" src="{{ asset('assets/media/users/300_14.jpg') }}" />
                                 </div>
                             </div>
@@ -200,28 +170,19 @@
 
                                 <!--START: HEAD -->
                                 <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x"
-                                    style="background-image: url(assets/media/bg/bg-8.jpg)">
+                                    style="background-image: url({{ asset('assets/media/bg/bg-8.jpg') }})">
                                     <div class="kt-user-card__avatar">
-                                        <img class="" alt="Pic" src="assets/media/users/300_14.jpg" />
+                                        <img class="" alt="Pic" src="{{ asset('assets/media/users/300_14.jpg') }}" />
                                     </div>
                                     <div class="kt-user-card__name">
-                                        محمود سليمان
+                                        {{ auth()->user()->name }}
                                     </div>
                                 </div>
                                 <!--END: HEAD -->
 
                                 <!--START: NAVIGATION -->
                                 <div class="kt-notification">
-                                    <a href="userProfile.php" class="kt-notification__item">
-                                        <div class="kt-notification__item-icon">
-                                            <i class="flaticon2-calendar-3 kt-font-success"></i>
-                                        </div>
-                                        <div class="kt-notification__item-details">
-                                            <div class="kt-notification__item-title kt-font-bold">
-                                                الصفحة الشخصية
-                                            </div>
-                                        </div>
-                                    </a>
+
 
                                     <a href="edit-profile.php" class="kt-notification__item">
                                         <div class="kt-notification__item-icon">
@@ -234,20 +195,19 @@
                                         </div>
                                     </a>
 
-                                    <a href="#" class="kt-notification__item">
-                                        <div class="kt-notification__item-icon">
-                                            <i class="flaticon2-mail kt-font-warning"></i>
+                                    <div class="kt-notification">
+                                        <div class="kt-notification__custom kt-space-between">
+                                            <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                            class="btn btn-label btn-label-brand btn-sm btn-bold">
+                                            تسجيل خروج 
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            style="display: none;">
+                                            @csrf
+                                        </form>
                                         </div>
-                                        <div class="kt-notification__item-details">
-                                            <div class="kt-notification__item-title kt-font-bold">
-                                                صندوق الوارد
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                    <div class="kt-notification__custom kt-space-between">
-                                        <a href="custom/user/login-v2.html" target="_blank"
-                                            class="btn btn-label btn-label-brand btn-sm btn-bold"> تسجيل خروج </a>
+    
                                     </div>
                                 </div>
                                 <!--END: NAVIGATION -->
