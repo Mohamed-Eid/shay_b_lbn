@@ -14,6 +14,9 @@
                 <div class="kt-portlet__head">
                     <div class="kt-portlet__head-label d-flex justify-content-between w-100">
                         <h3 class="kt-portlet__head-title"> قائمة الموظفين </h3>
+                        <div class="btns-box">
+                            <a href="{{ route('users.create') }}" type="button" class="btn btn-outline-success mx-1 mb-1"> <i class="la la-plus"></i>  اضافة مستخدم </a>
+                        </div>
                     </div>
                 </div>
                 <!--END:: TITLE-->

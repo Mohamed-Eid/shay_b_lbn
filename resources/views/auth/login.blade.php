@@ -10,7 +10,7 @@
                 <div class="kt-login__container">
                     <div class="kt-login__logo">
                         <a href="index.php" style="color: #fff;">
-                            <h1 class="logo"> Nour <span class="kt-font-success"> Elhuda </span> </h1>
+                            <h1 class="logo"> شاي <span class="kt-font-success"> بلبن </span> </h1>
                         </a>
                     </div>
                     <div class="kt-login__signin">

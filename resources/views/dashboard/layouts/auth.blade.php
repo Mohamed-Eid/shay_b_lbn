@@ -4,7 +4,7 @@
 	<!-- begin::Head -->
 	<head>
 		<meta charset="utf-8" />
-		<title>Nour El Huda | Login</title>
+		<title> شاي بلبن| Login</title>
 		<meta name="description" content="Login page">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 

@@ -14,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('clients')->group(function () {
+    Route::post('register','Api\ClientController@register');
+    Route::post('login','Api\ClientController@login');
+    Route::middleware(['authorizeclient'])->group(function () {
+        Route::get('profile','Api\ClientController@profile');
+        Route::put('update','Api\ClientController@update');
+        Route::put('update_fcm','Api\ClientController@update_fcm');
+        Route::post('change_password','Api\ClientController@change_password');
+    });
+});
+Route::prefix('consultants')->group(function () {
+    Route::get('','Api\ConsultantController@index');
+    Route::get('{consultant}','Api\ConsultantController@show');
+
 });

@@ -17,7 +17,8 @@ class ConsultantController extends Controller
      */
     public function index()
     {
-        //
+        $consultants = Consultant::all();
+        return view('dashboard.consultants.index',compact('consultants'));
     }
 
     /**

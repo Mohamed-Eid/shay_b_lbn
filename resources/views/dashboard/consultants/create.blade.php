@@ -135,6 +135,18 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        <div class="form-group col-12 col-md-6">
+                            <div class="row">
+                                <label class="col-form-label col-12">رابط الخريطة </label>
+                                <div class="input-group-prepend col-12">
+                                    <span class="input-group-text"> <i class="la la-pencil" style="font-size: 18px"></i>
+                                    </span>
+                                    <input type="text" name="map_link" class="form-control {{ input_has_error('map_link',$errors) }}" placeholder="الإسم">
+                                    @include('dashboard.layouts.includes.partials._input_validate',['field' => 'map_link'])
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="form-group col-12 col-md-6">
                             <div class="row">
@@ -171,6 +183,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="form-group col-12 col-md-6">
                             <div class="row">
                                 <label class="col-form-label col-12">نسبة التطبيق</label>
@@ -228,7 +241,7 @@
                                         <label class="col-lg-2 col-form-label"></label>
                                         <div class="col-lg-4">
                                             <a href="javascript:;" data-repeater-create="" class="btn btn-bold btn-sm btn-label-brand">
-                                                <i class="la la-plus"></i> إضافة فيديو
+                                                <i class="la la-plus"></i> إضافة معاد
                                             </a>
                                         </div>
                                     </div>

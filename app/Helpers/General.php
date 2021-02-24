@@ -56,19 +56,38 @@ function upload_file($path, $request_file){
     return $fileName;
 }
 
+
+function upload_image_base64($path , $image , $width=300 , $height=null)
+{
+    $path = 'uploads/'.$path ;
+    folder_path($path);
+    // $image must be a $request->image 
+    $name = mt_rand().time().'.png';
+    Intervention\Image\Facades\Image::make($image)->resize($width, $height, function ($constraint) {
+        $constraint->aspectRatio();
+    })
+        ->save(public_path($path .'/'. $name));
+    return  $name;
+}
+
 // function get_settings_by_class($class){
 //     return \App\Setting::where('class',$class)->get();
 // }
 
-function get_setting_by_key($key){
-    return \App\Setting::where('key',$key)->first();
-}
+// function get_setting_by_key($key){
+//     return \App\Setting::where('key',$key)->first();
+// }
 
 function input_has_error($field , $errors){
 
     return $errors->has($field) ? 'is-invalid' : '';
 }
 
+
+function discount($price,$discount)
+{
+    return $price - $price*($discount/100);
+}
 
 
 

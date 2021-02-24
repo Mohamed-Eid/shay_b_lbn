@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources\Api;
+namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ConsultantantResource extends JsonResource
+class AvailableResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,6 +14,10 @@ class ConsultantantResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id'   => $this->id,
+            'date' => $this->available_date,
+            'time' => $this->available_time,
+        ];
     }
 }

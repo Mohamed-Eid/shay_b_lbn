@@ -15,13 +15,13 @@
                     <div class="kt-portlet__head-label d-flex justify-content-between w-100">
                         <h3 class="kt-portlet__head-title"> قائمة المقالات </h3>
                         <div class="btns-box">
-                            <a href="{{ route('consultantants.create') }}" type="button" class="btn btn-outline-success mx-1 mb-1"> <i class="la la-plus"></i>  اضافة مشروع </a>
+                            <a href="{{ route('consultants.create') }}" type="button" class="btn btn-outline-success mx-1 mb-1"> <i class="la la-plus"></i>  اضافة مستشار </a>
                         </div>
                     </div>
                 </div>
                 <!--END:: TITLE-->
 
-                <!--START: NEW consultantant DATATABLE-->
+                <!--START: NEW consultant DATATABLE-->
                 <div class="kt-portlet__body kt-portlet__body--fit">
 
                     <table class="standard table table-responsive-sm">
@@ -29,31 +29,39 @@
                             <tr>
                                 <th>#</th>
                                 <th class="text-center" style="width: 130px !important;"> الاسم </th>
-                                <th>صورة المقال</th>
-                                <th>هيدر المقال</th>
+                                <th>صورة المستشار</th>
+                                <th>البادجات</th>
+                                <th>الزيارات</th>
                                 <th class="action" style="width: 85px !important;">إجراء</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($consultantants as $index => $consultantant)
+                            @foreach ($consultants as $index => $consultant)
                             <tr>
                                 <td class="text-center">{{ $index + 1 }}</td>
                                 <td class="text-center">
-                                    <p class="mb-1">{{ $consultantant->translate('ar')->name }}</p>
-                                    <p class="mb-1">{{ $consultantant->translate('en')->name }}</p>
+                                    <p class="mb-1">{{ $consultant->translate('ar')->name }}</p>
+                                    <p class="mb-1">{{ $consultant->translate('en')->name }}</p>
                                 </td>
 
                                 <td class="text-center">
-                                    <img alt="Pic"  width="80" src="{{ $consultantant->image_path }}" />
+                                    <img alt="Pic"  width="80" src="{{ $consultant->image_path }}" />
                                 </td>
 
                                 <td class="text-center">
-                                    <img alt="Pic"  width="80"  src="{{ $consultantant->header_path }}" />
+                                    {{ implode( ',',$consultant->badges) }}
+                                </td>
+                                <td class="text-center">
+                                    0
                                 </td>
 
                                 <td align="right" class="d-flex">
-                                    @include('dashboard.layouts.includes.partials._edit_btn',['route' => route('consultantants.edit',['consultantant'=>$consultantant])])
-                                    @include('dashboard.layouts.includes.partials._delete_btn',['route' => route('consultantants.destroy',['consultantant'=>$consultantant])])
+                                    <a href="#" class="kt-badge kt-badge--outline kt-badge--warning" data-skin="dark"
+                                        data-toggle="kt-tooltip" data-placement="top" title="التقرير المالي">
+                                        <i class="la la-dollar"></i>
+                                    </a>
+                                    @include('dashboard.layouts.includes.partials._edit_btn',['route' => route('consultants.edit',['consultant'=>$consultant])])
+                                    @include('dashboard.layouts.includes.partials._delete_btn',['route' => route('consultants.destroy',['consultant'=>$consultant])])
                                 </td>
                             </tr>
                             @endforeach
@@ -62,7 +70,7 @@
                     </table>
 
                 </div>
-                <!--END: NEW consultantant DATATABLE-->
+                <!--END: NEW consultant DATATABLE-->
 
             </div>
         </div>

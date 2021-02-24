@@ -142,6 +142,18 @@
 
                         <div class="form-group col-12 col-md-6">
                             <div class="row">
+                                <label class="col-form-label col-12">رابط الخريطة </label>
+                                <div class="input-group-prepend col-12">
+                                    <span class="input-group-text"> <i class="la la-pencil" style="font-size: 18px"></i>
+                                    </span>
+                                    <input type="text" name="map_link" value="{{ $consultant->map_link }}" class="form-control {{ input_has_error('map_link',$errors) }}" placeholder="الإسم">
+                                    @include('dashboard.layouts.includes.partials._input_validate',['field' => 'map_link'])
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-12 col-md-6">
+                            <div class="row">
                                 <label class="col-form-label col-12">عدد سنين الخبرة</label>
                                 <div class="input-group-prepend col-12">
                                     <span class="input-group-text"> <i class="la la-pencil" style="font-size: 18px"></i>

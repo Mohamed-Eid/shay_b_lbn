@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Nour Elhuda Dashboard</title>
+    <title>لوحة تحكم | شاي بلبن</title>
     <meta name="description" content="Latest updates and statistic charts">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -52,7 +52,7 @@
 
         <div class="kt-header-mobile__logo">
             <a href="index.php">
-                <h3 class="logo"> Tech <span> CRM </span> </h3>
+                <h3 class="logo"> شاي <span> بلبن </span> </h3>
             </a>
         </div>
 
@@ -78,7 +78,7 @@
                 <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
                     <div class="kt-aside__brand-logo">
                         <a href="index.php" style="color: #fff;">
-                            <h3 class="logo"> Nour <span> ElHuda </span> </h3>
+                            <h3 class="logo"> شاي <span> بلبن </span> </h3>
                         </a>
                     </div>
                     <div class="kt-aside__brand-tools">
@@ -104,6 +104,12 @@
                                 <a href="{{ route('users.index') }}" class="kt-menu__link ">
                                     <i class="kt-menu__link-icon la la-user la-2x" style="font-size: 20px"></i>
                                     <span class="kt-menu__link-text">إدارة المستخدمين</span>
+                                </a>
+                            </li>
+                            <li class="kt-menu__item {{ is_admin_active('consultants.index') }}" aria-haspopup="false">
+                                <a href="{{ route('consultants.index') }}" class="kt-menu__link ">
+                                    <i class="kt-menu__link-icon la la-user la-2x" style="font-size: 20px"></i>
+                                    <span class="kt-menu__link-text">إدارة المستشارين</span>
                                 </a>
                             </li>
 

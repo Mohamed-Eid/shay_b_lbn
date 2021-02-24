@@ -22,7 +22,7 @@
                     <div class="row">
                         @csrf
                         @method('PUT')
-                        <div class="form-group col-12 col-md-4">
+                        <div class="form-group col-12 col-md-6">
                             <div class="row">
                                 <label class="col-form-label col-12">اسم الموظف</label>
                                 <div class="input-group-prepend col-12">
@@ -34,7 +34,7 @@
                         </div>
 
 
-                        <div class="form-group col-12 col-md-4">
+                        <div class="form-group col-12 col-md-6">
                             <div class="row">
                                 <label class="col-form-label col-12">البريد الإلكترونى</label>
                                 <div class="input-group-prepend col-12">
@@ -45,7 +45,20 @@
                             </div>
                         </div>
 
-                        <div class="form-group col-12 col-md-4">
+                        <div class="form-group col-12 col-md-6">
+                            <div class="row">
+                              <label class="col-form-label col-12"> صلاحية المستخدم </label>
+                              <div class="input-group-prepend col-12">
+                                <span class="input-group-text"> <i class="la la-user" style="font-size: 18px"></i> </span>
+                                <select class="form-control kt-selectpicker" data-size="7" data-live-search="true">
+                                  <option > مدير النظام </option>
+                                  <option > صانع محتوي </option>
+                                </select>
+                              </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-12 col-md-6">
                             <div class="row">
                                 <label class="col-form-label col-12"> كلمة المرور </label>
                                 <div class="input-group-prepend col-12">

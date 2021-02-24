@@ -1,6 +1,6 @@
 <?php
 
-
+namespace App\Traits;
 
 
 trait ApiResponse{
@@ -13,11 +13,13 @@ trait ApiResponse{
         ], $code);
     }
     
-    protected function errorResponse($data = null, $msg = null, $code = 200){
+    protected function errorResponse($msg = null, $code = 200){
         return response()->json([
             "success" => false,
             "message" => $msg,
-            "data"    => $data
+            "data"    => null
         ], $code);
     }
 }
+
+?>

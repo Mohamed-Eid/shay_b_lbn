@@ -14,6 +14,32 @@ class ConsultantResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        $availables = [];
+
+        foreach($this->availables->groupBy('available_date') as $key => $value){
+            $availables[] =  [
+                'date' => $key,
+                'times' => AvailableResource::collection($value)
+            ];
+        }
+        
+        return [
+            'id'           => $this->id,
+            'name'         => $this->name,
+            'address'      => $this->address,
+            'bio'          => $this->bio,
+            'image'        => $this->image_path ,
+            'phone'        => $this->phone,
+            'experince'    => $this->experince,
+            'lat'          => $this->lat,
+            'lng'          => $this->lng,
+            'map_link'     => $this->map_link,
+            'rate'         => $this->rate,
+            'available_in' => count ($availables) > 0 ? $availables : null ,//collect($availables)->values()->all()
+            'badges'       => $this->badges,
+            'cost'         => $this->cost,
+            'discount'     => $this->discount,
+            'total_cost'   => discount($this->cost, $this->discount)
+        ];
     }
 }

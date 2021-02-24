@@ -11,7 +11,7 @@ class Consultant extends Model implements TranslatableContract
     use Translatable;
 
     public $translatedAttributes = ['name', 'address' , 'bio'];
-    protected  $appends = ['image_path','header_path',];
+    protected  $appends = ['image_path'];
 
     protected $guarded = [];
 
