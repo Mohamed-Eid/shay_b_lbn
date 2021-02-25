@@ -79,7 +79,7 @@ class VisitController extends Controller
     {
         $visit = Visit::find($visit);
         if(!$visit){
-            $this->errorResponse( [__('api.not_found')] ,404);
+            return $this->errorResponse( [__('api.not_found')] ,404);
         }
 
         $visit->update([

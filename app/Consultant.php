@@ -28,4 +28,9 @@ class Consultant extends Model implements TranslatableContract
     public function visits(){
         return $this->hasMany(Visit::class);
     }
+
+    public function rates()
+    {
+        return $this->morphMany(Rate::class, 'rateable');
+    }
 }

@@ -35,6 +35,7 @@ class ConsultantResource extends JsonResource
             'lng'          => $this->lng,
             'map_link'     => $this->map_link,
             'rate'         => $this->rate,
+            'rates'        => RateResource::collection($this->rates),
             'available_in' => count ($availables) > 0 ? $availables : null ,//collect($availables)->values()->all()
             'badges'       => $this->badges,
             'cost'         => $this->cost,

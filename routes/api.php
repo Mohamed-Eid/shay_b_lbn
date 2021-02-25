@@ -14,21 +14,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('clients')->group(function () {
-    Route::post('register','Api\ClientController@register');
-    Route::post('login','Api\ClientController@login');
-    Route::middleware(['authorizeclient'])->group(function () {
-        Route::get('profile','Api\ClientController@profile');
-        Route::put('update','Api\ClientController@update');
-        Route::put('update_fcm','Api\ClientController@update_fcm');
-        Route::post('change_password','Api\ClientController@change_password');
+Route::middleware(['api_lang'])->group(function () {
+    Route::prefix('clients')->group(function () {
+        Route::post('register','Api\ClientController@register');
+        Route::post('login','Api\ClientController@login');
+        Route::middleware(['authorizeclient'])->group(function () {
+            Route::get('profile','Api\ClientController@profile');
+            Route::put('update','Api\ClientController@update');
+            Route::put('update_fcm','Api\ClientController@update_fcm');
+            Route::post('change_password','Api\ClientController@change_password');
+        });
     });
+    Route::prefix('consultants')->group(function () {
+        Route::get('','Api\ConsultantController@index');
+        Route::get('{consultant}','Api\ConsultantController@show');
+    
+    });
+    
+    Route::prefix('rates')->middleware('authorizeclient')->group(function(){
+        Route::post('consultant','Api\RateController@rate_consultant');
+    });
+    
+    Route::resource('visits', 'Api\VisitController')->middleware('authorizeclient');  
 });
-Route::prefix('consultants')->group(function () {
-    Route::get('','Api\ConsultantController@index');
-    Route::get('{consultant}','Api\ConsultantController@show');
 
-});
-
-
-Route::resource('visits', 'Api\VisitController')->middleware('authorizeclient');
