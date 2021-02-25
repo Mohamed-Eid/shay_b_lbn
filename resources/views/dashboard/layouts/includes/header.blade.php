@@ -162,7 +162,6 @@
                             <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
                                 <div class="kt-header__topbar-user">
                                     <span class="kt-header__topbar-username kt-hidden-mobile">{{ auth()->user()->name }}</span>
-                                    <img alt="Pic" class="kt-radius-100" src="{{ asset('assets/media/users/300_14.jpg') }}" />
                                 </div>
                             </div>
                             <div
@@ -171,9 +170,6 @@
                                 <!--START: HEAD -->
                                 <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x"
                                     style="background-image: url({{ asset('assets/media/bg/bg-8.jpg') }})">
-                                    <div class="kt-user-card__avatar">
-                                        <img class="" alt="Pic" src="{{ asset('assets/media/users/300_14.jpg') }}" />
-                                    </div>
                                     <div class="kt-user-card__name">
                                         {{ auth()->user()->name }}
                                     </div>
@@ -184,7 +180,7 @@
                                 <div class="kt-notification">
 
 
-                                    <a href="edit-profile.php" class="kt-notification__item">
+                                    <a href="#" class="kt-notification__item">
                                         <div class="kt-notification__item-icon">
                                             <i class="flaticon-cogwheel-1 kt-font-success"></i>
                                         </div>
