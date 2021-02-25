@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
@@ -16,6 +17,12 @@ class Client extends Model
 
     public function visits(){
         return $this->hasMany(Visit::class);
+    }
+
+    public function calc_age(){
+        $now = Carbon::now();
+        $dob = Carbon::parse($this->age);
+        return $dob->diffInYears($now);
     }
 
 }

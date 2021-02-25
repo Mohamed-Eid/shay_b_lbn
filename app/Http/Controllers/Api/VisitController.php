@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\VisitDetailResource;
 use App\Http\Resources\VisitResource;
 use App\Traits\ApiResponse;
 use App\Visit;
@@ -17,19 +18,9 @@ class VisitController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return $this->successResponse(VisitDetailResource::collection($request->client->visits), null , 200);
     }
 
     /**
@@ -63,7 +54,7 @@ class VisitController extends Controller
             return $this->successResponse( new VisitResource($visit), null , 201);
         }
 
-        return $this->errorResponse( __('api.back_end_error') ,200);
+        return $this->errorResponse( [__('api.back_end_error')] ,200);
     }
 
     /**
@@ -72,20 +63,9 @@ class VisitController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+    public function show($visit)
+    {   $visit = Visit::find($visit);
+        return $visit ? $this->successResponse( new VisitDetailResource($visit), null , 200) :  $this->errorResponse( [__('api.not_found')] ,404);
     }
 
     /**
@@ -95,9 +75,18 @@ class VisitController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $visit)
     {
-        //
+        $visit = Visit::find($visit);
+        if(!$visit){
+            $this->errorResponse( [__('api.not_found')] ,404);
+        }
+
+        $visit->update([
+            'available_id' => $request->available_id
+        ]);
+
+        return $this->successResponse( new VisitDetailResource($visit), null , 200);
     }
 
     /**
@@ -106,8 +95,9 @@ class VisitController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Visit $visit)
     {
-        //
+        $visit->delete();
+        return $this->successResponse(  200);
     }
 }
