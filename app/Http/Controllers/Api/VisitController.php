@@ -98,6 +98,6 @@ class VisitController extends Controller
     public function destroy(Visit $visit)
     {
         $visit->delete();
-        return $this->successResponse(  200);
+        return $this->successResponse(null,null , 201 );
     }
 }

@@ -33,6 +33,8 @@ Route::middleware(['api_lang'])->group(function () {
     
 
     Route::get('settings','Api\SettingController@index');
+    
+    Route::post('requests','Api\RequestController@store');
 
     Route::prefix('rates')->middleware('authorizeclient')->group(function(){
         Route::post('consultant','Api\RateController@rate_consultant');

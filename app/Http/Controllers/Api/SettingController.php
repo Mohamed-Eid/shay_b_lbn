@@ -15,6 +15,6 @@ class SettingController extends Controller
             'rate_question' => \App\Setting::find(27)->value
         ];
         
-        return $this->successResponse( $data , 200);
+        return $this->successResponse( $data ,null, 200);
     }
 }

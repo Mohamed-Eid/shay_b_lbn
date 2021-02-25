@@ -41,7 +41,7 @@ class RateController extends Controller
             $consultant->update([
                 'rate' => number_format(( $consultant->rates->sum('rate') / $consultant->rates->count()), 2, '.', '')
             ]);
-            return $this->successResponse( null , 201);
+            return $this->successResponse(null,null , 201 );
         }
 
         return $this->errorResponse( [__('api.backend_error')] ,404);

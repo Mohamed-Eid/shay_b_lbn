@@ -169,7 +169,7 @@ class ClientController extends Controller
             $client->update([
                 'password' => bcrypt($request->new_password),
             ]);
-            return $this->successResponse(  null ,200);
+            return $this->successResponse( null , null ,200);
         }
         return $this->errorResponse( [__('api.wrong_password')]);
     }
