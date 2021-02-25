@@ -31,6 +31,9 @@ Route::middleware(['api_lang'])->group(function () {
     
     });
     
+
+    Route::get('settings','Api\SettingController@index');
+
     Route::prefix('rates')->middleware('authorizeclient')->group(function(){
         Route::post('consultant','Api\RateController@rate_consultant');
     });
