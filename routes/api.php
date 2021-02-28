@@ -27,10 +27,12 @@ Route::middleware(['api_lang'])->group(function () {
     });
     Route::prefix('consultants')->group(function () {
         Route::get('','Api\ConsultantController@index');
-        Route::get('{consultant}','Api\ConsultantController@show');
-    
+        Route::get('{consultant}','Api\ConsultantController@show');    
     });
     
+    Route::get('search','Api\ConsultantController@search');
+    Route::get('filter','Api\ConsultantController@filter');
+
 
     Route::get('settings','Api\SettingController@index');
     

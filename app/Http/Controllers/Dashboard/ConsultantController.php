@@ -40,7 +40,7 @@ class ConsultantController extends Controller
     public function store(CreateConsultantRequest $request)
     {
         // dd($request->all());
-        $data = $request->except(['image','availables']);
+        $data = $request->except(['image','availables','location','address']);
         
         $data['image'] = upload_image_without_resize('consultants',$request->image);
         
@@ -97,7 +97,7 @@ class ConsultantController extends Controller
     public function update(Request $request, Consultant $consultant)
     {
         // dd($request->all());
-        $data = $request->except(['image','availables','old_availables']);
+        $data = $request->except(['image','availables','old_availables','location','address']);
         
         if ($request->image) {
             delete_image('consultants',$consultant->iamge);
