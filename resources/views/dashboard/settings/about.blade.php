@@ -24,6 +24,20 @@
                         @csrf
                         @method('PUT')
 
+                        <div class="form-group col-12 col-md-6">
+                            <div class="row">
+                                <label class="col-form-label col-12">صورة الصفحة</label>
+                                <div class="input-group-prepend col-12">
+                                    <span class="input-group-text"> <i class="la la-pencil" style="font-size: 18px"></i>
+                                    </span>
+                                    <input type="file" name="{{ get_setting_by_key('about_image')->id }}[one_value]" onchange="changeImagePreview(event);" class="form-control d-block " placeholder="Image" >
+                                </div>
+                                <div class="border mt-2">
+                                    <img  width="150px" height="100px" src="{{ get_setting_by_key('about_image')->image_path }}" alt="your image" />
+
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="form-group col-12">
                             <div class="row">
