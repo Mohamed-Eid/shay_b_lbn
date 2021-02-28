@@ -40,7 +40,9 @@ class ConsultantResource extends JsonResource
             'badges'       => $this->badges,
             'cost'         => $this->cost,
             'discount'     => $this->discount,
-            'total_cost'   => discount($this->cost, $this->discount)
+            'total_cost'   => discount($this->cost, $this->discount),
+            'distance'             => $this->distance ?? null
+
         ];
     }
 }

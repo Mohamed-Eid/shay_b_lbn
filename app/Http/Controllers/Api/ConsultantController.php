@@ -27,12 +27,22 @@ class ConsultantController extends Controller
     }
 
     public function filter(Request $request){
-        return [
-            "recent"        => $this->successResponse(ConsultantResource::collection(Consultant::latest()->get())) ,
-            "rate"          => $this->successResponse(ConsultantResource::collection(Consultant::OrderBy("rate","desc")->get())),
-            "certificated"  => $this->successResponse(ConsultantResource::collection($this->get_certificated())),
-            "location"  => $this->successResponse(ConsultantResource::collection($this->get_nearest($request->lat,$request->lng))),
-        ][$request->type];
+        
+        if ($request->type == "recent") {
+            return $this->successResponse(ConsultantResource::collection(Consultant::latest()->get()));
+        }elseif($request->type =="rate"){
+            return $this->successResponse(ConsultantResource::collection(Consultant::OrderBy("rate","desc")->get()));
+
+        }elseif($request->type =="certificated"){
+            return $this->successResponse(ConsultantResource::collection($this->get_certificated()));
+        }elseif($request->type =="location" ){
+            return $this->successResponse(ConsultantResource::collection($this->get_nearest($request->lat,$request->lng)));
+        }
+        // return [
+        //     "rate"          => $this->successResponse(ConsultantResource::collection(Consultant::OrderBy("rate","desc")->get())),
+        //     "certificated"  => $this->successResponse(ConsultantResource::collection($this->get_certificated())),
+        //     "location"      => $this->successResponse(ConsultantResource::collection($this->get_nearest($request->lat,$request->lng))),
+        // ][$request->type];
     }
 
     private function get_nearest($lat , $lng){
@@ -42,13 +52,15 @@ class ConsultantController extends Controller
         * cos(radians(lat)) * cos(radians(lng) - radians(" . $lng . "))
         + sin(radians(" .$lat. ")) * sin(radians(lat))) AS distance"));
         $consultants   =   $consultants->orderBy('distance', 'asc')->get();
-
-        // return $consultants;
-
     
         $data = [];
         foreach ($consultants as $key => $consultant) {
-            $data[] = Consultant::find($consultant->id);
+            $dis = $consultant->distance;
+
+            $consultant = Consultant::find($consultant->id);
+            $consultant->distance = ($dis);
+
+            $data[] = $consultant;
         }
         return $data;
     }
