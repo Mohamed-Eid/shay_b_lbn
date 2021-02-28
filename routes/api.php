@@ -42,6 +42,8 @@ Route::middleware(['api_lang'])->group(function () {
         Route::post('consultant','Api\RateController@rate_consultant');
     });
     
+    Route::post('send_message','Api\ContactController@send');
+
     Route::resource('visits', 'Api\VisitController')->middleware('authorizeclient');  
 });
 

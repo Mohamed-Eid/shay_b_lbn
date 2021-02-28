@@ -27,6 +27,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('users', 'Dashboard\UserController');
         Route::resource('consultants', 'Dashboard\ConsultantController');
         Route::resource('availables', 'Dashboard\AvailableController')->only(['destroy']);
+        Route::resource('messages', 'Dashboard\ContactController');
 
         Route::group(['prefix' => 'settings'], function (){
             Route::get('contact','Dashboard\SettingController@contact')->name('settings.contact');
