@@ -30,9 +30,9 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('messages', 'Dashboard\ContactController');
 
         Route::group(['prefix' => 'settings'], function (){
-            Route::get('contact','Dashboard\SettingController@contact')->name('settings.contact');
+            // Route::get('contact','Dashboard\SettingController@contact')->name('settings.contact');
             Route::get('about','Dashboard\SettingController@about')->name('settings.about');
-            Route::get('home','Dashboard\SettingController@home')->name('settings.home');
+            // Route::get('home','Dashboard\SettingController@home')->name('settings.home');
             Route::put('update','Dashboard\SettingController@update')->name('settings.update');
         });
     });

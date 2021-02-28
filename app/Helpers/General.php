@@ -74,9 +74,9 @@ function upload_image_base64($path , $image , $width=300 , $height=null)
 //     return \App\Setting::where('class',$class)->get();
 // }
 
-// function get_setting_by_key($key){
-//     return \App\Setting::where('key',$key)->first();
-// }
+function get_setting_by_key($key){
+    return \App\Setting::where('key',$key)->first();
+}
 
 function input_has_error($field , $errors){
 

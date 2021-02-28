@@ -34,4 +34,8 @@ class ContactController extends Controller
 
         return $this->errorResponse( __('api.back_end_error') ,200);
     }
+
+    public function about(){
+        return $this->successResponse( ["about" => get_setting_by_key('about')->value], null , 201);
+    }
 }

@@ -25,6 +25,13 @@ Route::middleware(['api_lang'])->group(function () {
             Route::post('change_password','Api\ClientController@change_password');
         });
     });
+
+    Route::prefix('social')->group(function () {
+        Route::post('facebook','Api\SocialController@facebook');
+        Route::post('google','Api\SocialController@google');
+    });
+
+
     Route::prefix('consultants')->group(function () {
         Route::get('','Api\ConsultantController@index');
         Route::get('{consultant}','Api\ConsultantController@show');    
@@ -43,6 +50,7 @@ Route::middleware(['api_lang'])->group(function () {
     });
     
     Route::post('send_message','Api\ContactController@send');
+    Route::get('about','Api\ContactController@about');
 
     Route::resource('visits', 'Api\VisitController')->middleware('authorizeclient');  
 });
