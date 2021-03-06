@@ -25,8 +25,8 @@ class CreateCourseRequest extends FormRequest
     {
         $rules = [
             'image' => 'required',
+            'instructor_id' => 'required',
             'category_id' => 'required',
-            'promo_video' => 'required',
             'price' => 'required',
         ];
 

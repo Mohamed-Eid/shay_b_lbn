@@ -54,12 +54,12 @@
                         </div>
                         <div class="form-group col-12 col-md-6">
                             <div class="row">
-                                <label class="col-form-label col-12"> الفرع </label>
+                                <label class="col-form-label col-12"> المدرب </label>
                                 <div class="input-group-prepend col-12">
                                     <span class="input-group-text"> <i class="la la-user" style="font-size: 18px"></i> </span>
-                                    <select class="form-control kt-selectpicker" name="branch_id" data-size="3" data-live-search="true">
-                                        @foreach ($branches as $branch)
-                                        <option value="{{ $branch->id }}"> {{ $branch->name }} </option>
+                                    <select class="form-control kt-selectpicker" name="instructor_id" data-size="5" data-live-search="true">
+                                        @foreach ($instructors as $instructor)
+                                        <option value="{{ $instructor->id }}"> {{ $instructor->name }} </option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -112,12 +112,13 @@
 
                         <div class="form-group col-12 col-md-6">
                             <div class="row">
-                                <label class="col-form-label col-12">رابط البرومو فيديو </label>
+                                <label class="col-form-label col-12"> نوع الكورس </label>
                                 <div class="input-group-prepend col-12">
-                                    <span class="input-group-text"> <i class="la la-pencil" style="font-size: 18px"></i>
-                                    </span>
-                                    <input type="text" name="promo_video" class="form-control {{ input_has_error('promo_video',$errors) }}" placeholder="رابط البرومو فيديو">
-                                    @include('dashboard.layouts.includes.partials._input_validate',['field' => 'promo_video'])
+                                    <span class="input-group-text"> <i class="la la-user" style="font-size: 18px"></i> </span>
+                                    <select class="form-control kt-selectpicker" name="type" data-size="2" data-live-search="true">
+                                        <option value="online"> Online </option>
+                                        <option value="offline"> Offline </option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -160,23 +161,6 @@
 
                         <div class="form-group col-12 col-md-12">
                             <div class="row">
-                                @php
-                                    $badges = ['selected_badge','recent_badge','our_stars_badge','certificated'];
-                                @endphp
-                                <label class="col-form-label col-12"> البادج </label>
-                                <div class="input-group-prepend col-12">
-                                    <span class="input-group-text"> <i class="la la-user" style="font-size: 18px"></i> </span>
-                                    <select class="form-control kt-selectpicker" name="badges[]" data-size="3" data-live-search="true" multiple>
-                                        @foreach ($badges as $badge)
-                                        <option value="{{ $badge }}"> {{ Str::ucfirst(str_replace("_"," ",$badge))  }}  </option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group col-12 col-md-12">
-                            <div class="row">
                                 <label class="col-form-label col-12"> مفعل ؟ </label>
                                 <div class="input-group-prepend col-12">
                                     <span class="input-group-text"> <i class="la la-user" style="font-size: 18px"></i> </span>
@@ -187,6 +171,68 @@
                                 </div>
                             </div>
                         </div>
+
+                                                <!-- START:: TITLE -->
+                        <div class="kt-portlet__head col-12">
+                            <div class="kt-portlet__head-label d-flex justify-content-between w-100">
+                                <h3 class="kt-portlet__head-title text-center" style="width: 100%">  المميزات </h3>
+                            </div>
+                        </div>
+                        <!--END:: TITLE-->
+
+                        <div id="kt_repeater_2" class="col-12">
+                            <div class="form-group form-group-last" id="kt_repeater_2">
+                                <div data-repeater-list="features" class="col-12">
+                                    <div data-repeater-item class="form-group align-items-center">
+                                        <div class="col-12 d-flex" style="display: none;">
+                                            <div class="row">
+                                                    <div class="input-group-prepend col-6 my-2">
+                                                        <span class="input-group-text"> <i class="la la-pencil" style="font-size: 18px"></i>
+                                                        </span>
+                                                        <input type="text" name="ar_name" class="form-control d-block" placeholder="اسم الميزة باللغة العربية">
+                                                    </div>
+                
+                                                    <div class="input-group-prepend col-6 my-2">
+                                                        <span class="input-group-text"> <i class="la la-pencil" style="font-size: 18px"></i>
+                                                        </span>
+                                                        <input type="text" name="en_name" class="form-control d-block" placeholder="اسم الميزة باللغة الانجليزيه">
+                                                    </div>
+                                                    <div class="input-group-prepend col-12 my-2">
+                                                        <span class="input-group-text"> <i class="la la-pencil" style="font-size: 18px"></i>
+                                                        </span>
+                                                        <input type="text" name="ar_description" class="form-control d-block" placeholder="وصف الميزة باللغة العربية">
+                                                    </div>
+                
+                                                    <div class="input-group-prepend col-12 my-2">
+                                                        <span class="input-group-text"> <i class="la la-pencil" style="font-size: 18px"></i>
+                                                        </span>
+                                                        <input type="text" name="en_description" class="form-control d-block" placeholder="وصف الميزة باللغة الانجليزيه">
+                                                    </div>
+                                            </div>
+
+
+                                            <div class="kt-form__group--inline col-1 mt-2">
+                                                <a href="javascript:;" data-repeater-delete="" class="btn-sm btn btn-label-danger btn-bold">
+                                                    <i class="la la-trash-o"></i>
+                                                    حذف
+                                                </a>
+                                            </div>
+
+                                            <div class="d-md-none kt-margin-b-10"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-group-last">
+                                <label class="col-lg-2 col-form-label"></label>
+                                <div class="col-lg-4">
+                                    <a href="javascript:;" data-repeater-create="" class="btn btn-bold btn-sm btn-label-brand">
+                                        <i class="la la-plus"></i> إضافة ميزة
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
 
                         <div class="form-group col-12 px-4">
                             <div class="input-group">

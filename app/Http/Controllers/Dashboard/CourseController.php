@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Branch;
 use App\Category;
 use App\Course;
+use App\Feature;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateCourseRequest;
 use App\Http\Requests\UpdateCourseRequest;
@@ -32,10 +32,9 @@ class CourseController extends Controller
     public function create()
     {
         $categories = Category::all();
-        $branches   = Branch::all();
         $instructors = Instructor::all();
 
-        return view('dashboard.courses.create',compact('categories','branches','instructors'));       
+        return view('dashboard.courses.create',compact('categories','instructors'));       
     }
 
     /**
@@ -47,16 +46,33 @@ class CourseController extends Controller
     public function store(CreateCourseRequest $request)
     {
         // dd($request->all());
-        $data = $request->all();
+        $data = $request->except(['features']);
         $data['image'] = upload_image_without_resize('courses',$request->image);
         $data['user_id'] = auth()->user()->id;
 
         $course = Course::create($data);
 
-        //TODO::make many to many relations
+        if($request->features){
+            foreach ($this->process_features($request) as $feature) {
+                $course->features()->create($feature);
+            }
+        }
 
         return redirect()->back()->with('success','تمت الإضافة بنجاح');
 
+    }
+
+    private function process_features(Request $request){
+        $data = [];
+        foreach ($request->features as $key => $feature) {
+            if($feature['ar_name'] != null && $feature['en_name'] != null){
+                $data[$key]['ar']['name'] = $feature['ar_name'];
+                $data[$key]['en']['name'] = $feature['en_name'];
+                $data[$key]['ar']['description'] = $feature['ar_description'];
+                $data[$key]['en']['description'] = $feature['en_description'];                
+            }
+        }
+        return $data;
     }
 
     /**
@@ -80,10 +96,9 @@ class CourseController extends Controller
     {
 
         $categories = Category::all();
-        $branches   = Branch::all();
         $instructors = Instructor::all();
 
-        return view('dashboard.courses.edit',compact('categories','course','branches','instructors'));       
+        return view('dashboard.courses.edit',compact('categories','course','instructors'));       
 
     }
 
@@ -96,7 +111,7 @@ class CourseController extends Controller
      */
     public function update(UpdateCourseRequest $request,Course $course)
     {
-        $course_data = $request->except('_token','image');
+        $course_data = $request->except('_token','image','features','old_features');
 
         if($request->image){
             if ($course->image != 'default.png' ) {
@@ -106,6 +121,28 @@ class CourseController extends Controller
         }
 
         $course->update($course_data);
+
+
+        if($request->features){
+            foreach ($this->process_features($request) as $feature) {
+                $course->features()->create($feature);
+            }
+        }
+        
+        if($request->old_features){
+            foreach ($request->old_features as $key => $value) {
+                $data = [];
+                $old_inv = Feature::find($key);
+                if($value['ar_name'] != null && $value['en_name'] != null){
+                    $data['ar']['name'] = $value['ar_name'];
+                    $data['en']['name'] = $value['en_name'];
+                    $data['ar']['description'] = $value['ar_description'];
+                    $data['en']['description'] = $value['en_description'];                
+                }
+                $old_inv->update($data);
+            }
+        }
+
 
         return redirect()->back()->with('success','تم الحفظ بنجاح');
     }

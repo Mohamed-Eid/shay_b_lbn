@@ -26,7 +26,7 @@ class UpdateCourseRequest extends FormRequest
         $rules = [
             // 'image' => 'required',
             'category_id' => 'required',
-            'promo_video' => 'required',
+            'instructor_id' => 'required',
             'price' => 'required',
         ];
 

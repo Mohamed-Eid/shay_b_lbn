@@ -26,15 +26,15 @@ class Course extends Model implements TranslatableContract
     public function user(){
         return $this->belongsTo(user::class);
     }
-    public function branch(){
-        return $this->belongsTo(Branch::class);
+    
+    public function instructor(){
+        return $this->belongsTo(Instructor::class);
     }
 
-    public function sections(){
-        return $this->hasMany(Section::class);
+
+    public function features(){
+        return $this->hasMany(Feature::class);
     }
 
-    public function videos(){
-        return $this->hasMany(Video::class);
-    }
+
 }

@@ -15,7 +15,7 @@
                     <div class="kt-portlet__head-label d-flex justify-content-between w-100">
                         <h3 class="kt-portlet__head-title">الكورسات </h3>
                         <div class="btns-box">
-                            <a href="{{ route('courses.create') }}" type="button" class="btn btn-outline-success mx-1 mb-1"> <i class="la la-plus"></i>  اضافة مقال </a>
+                            <a href="{{ route('courses.create') }}" type="button" class="btn btn-outline-success mx-1 mb-1"> <i class="la la-plus"></i>  اضافة كورس </a>
                         </div>
                     </div>
                 </div>
@@ -31,8 +31,7 @@
                                 <th class="text-center" style="width: 130px !important;"> الاسم </th>
                                 <th>صورة الكورس</th>
                                 <th>القسم</th>
-                                <th>بواسطة</th>
-                                <th>الفرع</th>
+                                <th>المدرب</th>
                                 <th class="action" style="width: 85px !important;">إجراء</th>
                             </tr>
                         </thead>
@@ -51,20 +50,15 @@
                                     <p class="mb-1">{{ $course->category->translate('ar')->name }}</p>
                                     <p class="mb-1">{{ $course->category->translate('en')->name }}</p>
                                 </td>
-                                <td>{{ $course->user->name }}</td>
-                                <td>
-                                    @if ($course->branch)
-                                    <p class="mb-1">{{ $course->branch->translate('ar')->name }}</p>
-                                    <p class="mb-1">{{ $course->branch->translate('en')->name }}</p>
-                                    @endif
-                                </td>
+                                <td>{{ $course->instructor->name }}</td>
+ 
 
 
                                 <td align="right" class="d-flex">
-                                    <a href="{{ route('courses.sections.index',$course) }}" class="kt-badge kt-badge--outline kt-badge--primary" data-skin="dark"
+                                    {{-- <a href="{{ route('courses.sections.index',$course) }}" class="kt-badge kt-badge--outline kt-badge--primary" data-skin="dark"
                                         data-toggle="kt-tooltip" data-placement="top" title="سكاشن">
                                         <i class="la la-database"></i>
-                                    </a>
+                                    </a> --}}
                                     @include('dashboard.layouts.includes.partials._edit_btn',['route' => route('courses.edit',['course'=>$course])])
                                     @include('dashboard.layouts.includes.partials._delete_btn',['route' => route('courses.destroy',['course'=>$course])])
                                 </td>
