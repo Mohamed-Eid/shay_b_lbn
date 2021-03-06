@@ -221,7 +221,7 @@
                             <div class="kt-portlet__head">
                                 <div class="kt-portlet__head-label">
                                     <h3 class="kt-portlet__head-title">
-                                        Adjusted Pills
+                                        المواعيد المتاحة
                                     </h3>
                                 </div>
                             </div>
@@ -255,61 +255,6 @@
                                 </div>
                             </div>
                         </div>
-
-{{-- 
-                        <div class="kt-portlet__body col-12">
-
-                            <div class="kt-form__section kt-form__section--first">
-                                <h3 class="kt-portlet__head-title text-center" style="width: 100%">  المواعيد المتاحه </h3>
-
-                                <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg"></div>
-                                <div id="kt_repeater_1" class="col-12">
-                                    <div class="form-group form-group-last" id="kt_repeater_1">
-                                        <div data-repeater-list="availables" class="col-12">
-                                            <div data-repeater-item class="form-group align-items-center">
-                                                <div class="col-12 d-flex">
-
-                                                    <div class="kt-form__group--inline col-4">
-                                                        <div class="input-group-prepend col-12 my-2">
-                                                            <span class="input-group-text"> <i class="la la-pencil" style="font-size: 18px"></i>
-                                                            </span>
-                                                            <input type="date" name="available_date" class="form-control d-block" placeholder="التاريخ الوقت">
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <div class="kt-form__group--inline col-4">
-                                                        <div class="input-group-prepend col-12 my-2">
-                                                            <span class="input-group-text"> <i class="la la-pencil" style="font-size: 18px"></i>
-                                                            </span>
-                                                            <input type="time" name="available_time" class="form-control d-block" placeholder="إسم الفيديو باللغة الانجليزيه">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="kt-form__group--inline col-1 mt-2">
-                                                        <a href="javascript:;" data-repeater-delete="" class="btn-sm btn btn-label-danger btn-bold">
-                                                            <i class="la la-trash-o"></i>
-                                                            حذف
-                                                        </a>
-                                                    </div>
-        
-                                                    <div class="d-md-none kt-margin-b-10"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group form-group-last">
-                                        <label class="col-lg-2 col-form-label"></label>
-                                        <div class="col-lg-4">
-                                            <a href="javascript:;" data-repeater-create="" class="btn btn-bold btn-sm btn-label-brand">
-                                                <i class="la la-plus"></i> إضافة معاد
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            
-                            </div>
-                        </div> --}}
-
 
 
                         <div class="form-group col-12 px-4">

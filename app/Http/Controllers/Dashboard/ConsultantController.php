@@ -99,6 +99,7 @@ class ConsultantController extends Controller
      */
     public function edit(Consultant $consultant)
     {
+        // return $consultant->availables;
         return view('dashboard.consultants.edit',compact('consultant'));
     }
 
@@ -112,7 +113,7 @@ class ConsultantController extends Controller
     public function update(Request $request, Consultant $consultant)
     {
         // dd($request->all());
-        $data = $request->except(['image','availables','old_availables','location','address']);
+        $data = $request->except(['image','availables','old_availables','location','address','days']);
         
         if ($request->image) {
             delete_image('consultants',$consultant->iamge);
@@ -129,16 +130,31 @@ class ConsultantController extends Controller
         $consultant->update($data);
 
 
-
-        if($request->old_availables){
-            foreach ($request->old_availables as $key => $value) {
-                $av_data = [];
-                $old_available = Available::find($key);
-                $av_data['available_date'] = $value['available_date'];
-                $av_data['available_time'] = $value['available_time'];
-                $old_available->update($av_data);
+        if($request->days){
+            foreach ($consultant->availables as $available) {
+                $available->delete();
+            }
+            foreach ($request->days as $day => $times) {
+                foreach ($times as $key => $time) {
+                    $consultant->availables()->create([
+                        'available_date' => $day ,
+                        'available_time' => $time,
+                    ]);
+                }
             }
         }
+
+
+
+        // if($request->old_availables){
+        //     foreach ($request->old_availables as $key => $value) {
+        //         $av_data = [];
+        //         $old_available = Available::find($key);
+        //         $av_data['available_date'] = $value['available_date'];
+        //         $av_data['available_time'] = $value['available_time'];
+        //         $old_available->update($av_data);
+        //     }
+        // }
 
         return redirect()->back()->with('success','تم الحفظ بنجاح');
     }
