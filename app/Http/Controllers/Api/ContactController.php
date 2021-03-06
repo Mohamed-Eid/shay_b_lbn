@@ -37,8 +37,8 @@ class ContactController extends Controller
 
     public function about(){
         $data =[
-            "image" =>get_setting_by_key('about_image')->image_path,
+            "image" =>get_setting_by_key('about_image')->image_path ?? null,
             "about" => get_setting_by_key('about')->value];
-        return $this->successResponse( $data, null , 201);
+        return $this->successResponse( $data, null , 200);
     }
 }

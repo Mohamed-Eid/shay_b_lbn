@@ -12,7 +12,11 @@ class SettingController extends Controller
 
     public function index(){
         $data = [
-            'rate_question' => \App\Setting::find(27)->value
+            'rate_question'   => \App\Setting::find(27)->value,
+            "whatsapp"        => "http://wa.me/201275262482",
+            "facebook"        => "https://www.facebook.com/",
+            "twitter"         => "https://twitter.com/medoeid50",
+            "contact_image"   =>get_setting_by_key('about_image')->image_path ?? null,
         ];
         
         return $this->successResponse( $data ,null, 200);

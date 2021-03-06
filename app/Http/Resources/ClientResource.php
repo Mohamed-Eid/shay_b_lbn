@@ -19,7 +19,7 @@ class ClientResource extends JsonResource
             'name'                 => $this->name,
             'email'                => $this->email,
             'mobile'               => $this->mobile,
-            'image'                => $this->image ? $this->image_path : null,
+            'image'                => $this->image ? $this->image_path : "",
             'age'                  => $this->calc_age(),
             'dob'                  => $this->age,
             'visits'               => VisitResource::collection($this->visits),
