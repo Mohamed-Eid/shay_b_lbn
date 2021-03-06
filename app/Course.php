@@ -35,6 +35,9 @@ class Course extends Model implements TranslatableContract
     public function features(){
         return $this->hasMany(Feature::class);
     }
+    public function lessons(){
+        return $this->hasMany(Lesson::class);
+    }
 
 
 }

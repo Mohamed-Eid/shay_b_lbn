@@ -23,6 +23,10 @@ body::-webkit-scrollbar-thumb {
   transition: all 0.3s ease-in-out;
 } 
 
+.bootstrap-timepicker-widget.dropdown-menu.open {
+  direction: ltr;
+}
+
 .kt-portlet .kt-portlet__head .kt-portlet__head-label .btns-box a:hover,
 .kt-portlet .kt-portlet__head .kt-portlet__head-label .btns-box button:hover {
   background-color: #f0a500 !important;

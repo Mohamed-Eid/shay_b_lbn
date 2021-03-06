@@ -106,10 +106,29 @@
                                     <span class="kt-menu__link-text">إدارة المستخدمين</span>
                                 </a>
                             </li>
+                            
                             <li class="kt-menu__item {{ is_admin_active('consultants.index') }}" aria-haspopup="false">
                                 <a href="{{ route('consultants.index') }}" class="kt-menu__link ">
                                     <i class="kt-menu__link-icon la la-user la-2x" style="font-size: 20px"></i>
                                     <span class="kt-menu__link-text">إدارة المستشارين</span>
+                                </a>
+                            </li>
+                            <li class="kt-menu__item {{ is_admin_active('categories.index') }}" aria-haspopup="false">
+                                <a href="{{ route('categories.index') }}" class="kt-menu__link ">
+                                    <i class="kt-menu__link-icon la la-user la-2x" style="font-size: 20px"></i>
+                                    <span class="kt-menu__link-text">إدارة الاقسام</span>
+                                </a>
+                            </li>
+                            <li class="kt-menu__item {{ is_admin_active('courses.index') }}" aria-haspopup="false">
+                                <a href="{{ route('courses.index') }}" class="kt-menu__link ">
+                                    <i class="kt-menu__link-icon la la-user la-2x" style="font-size: 20px"></i>
+                                    <span class="kt-menu__link-text">إدارة الدورات</span>
+                                </a>
+                            </li>
+                            <li class="kt-menu__item {{ is_admin_active('events.index') }}" aria-haspopup="false">
+                                <a href="{{ route('events.index') }}" class="kt-menu__link ">
+                                    <i class="kt-menu__link-icon la la-user la-2x" style="font-size: 20px"></i>
+                                    <span class="kt-menu__link-text">إدارة الإيفينتات</span>
                                 </a>
                             </li>
 

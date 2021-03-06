@@ -34,6 +34,9 @@ Route::group(['prefix' => 'admin'], function () {
         
         Route::resource('categories', 'Dashboard\CategoryController');
         Route::resource('courses', 'Dashboard\CourseController');
+
+        Route::resource('courses.lessons', 'Dashboard\LessonController');
+        
         Route::resource('features', 'Dashboard\FeatureController');
         
         Route::resource('events', 'Dashboard\EventController');
