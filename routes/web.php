@@ -35,6 +35,9 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('categories', 'Dashboard\CategoryController');
         Route::resource('courses', 'Dashboard\CourseController');
         Route::resource('features', 'Dashboard\FeatureController');
+        
+        Route::resource('events', 'Dashboard\EventController');
+        Route::resource('event_features', 'Dashboard\EventFeatureController');
 
         Route::group(['prefix' => 'settings'], function (){
             // Route::get('contact','Dashboard\SettingController@contact')->name('settings.contact');
