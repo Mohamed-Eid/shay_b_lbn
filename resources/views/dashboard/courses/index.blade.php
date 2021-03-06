@@ -51,14 +51,12 @@
                                     <p class="mb-1">{{ $course->category->translate('en')->name }}</p>
                                 </td>
                                 <td>{{ $course->instructor->name }}</td>
- 
-
 
                                 <td align="right" class="d-flex">
-                                    {{-- <a href="{{ route('courses.sections.index',$course) }}" class="kt-badge kt-badge--outline kt-badge--primary" data-skin="dark"
-                                        data-toggle="kt-tooltip" data-placement="top" title="سكاشن">
+                                    <a href="{{ route('courses.lessons.index',$course) }}" class="kt-badge kt-badge--outline kt-badge--primary" data-skin="dark"
+                                        data-toggle="kt-tooltip" data-placement="top" title="دروس">
                                         <i class="la la-database"></i>
-                                    </a> --}}
+                                    </a>
                                     @include('dashboard.layouts.includes.partials._edit_btn',['route' => route('courses.edit',['course'=>$course])])
                                     @include('dashboard.layouts.includes.partials._delete_btn',['route' => route('courses.destroy',['course'=>$course])])
                                 </td>
