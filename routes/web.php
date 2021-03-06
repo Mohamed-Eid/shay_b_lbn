@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 
 //AdminPanel Routes
+
+
+
+
 Route::group(['prefix' => 'admin'], function () {
     Auth::routes();
     Route::middleware(['auth'])->group(function () {

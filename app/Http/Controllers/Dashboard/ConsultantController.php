@@ -39,19 +39,34 @@ class ConsultantController extends Controller
      */
     public function store(CreateConsultantRequest $request)
     {
+        //CreateConsultantRequest
         // dd($request->all());
-        $data = $request->except(['image','availables','location','address']);
+
+        $data = $request->except(['image','availables','location','address','days']);
         
         $data['image'] = upload_image_without_resize('consultants',$request->image);
         
         $consultant = Consultant::create($data);
 
+        if($request->days){
+            foreach ($request->days as $day => $times) {
+                foreach ($times as $key => $time) {
+                    $consultant->availables()->create([
+                        'available_date' => $day ,
+                        'available_time' => $time,
+                    ]);
+                }
 
-        if($request->availables){
-            foreach ($this->process_availables($request) as $available) {
-                $consultant->availables()->create($available);
             }
         }
+
+
+
+        // if($request->availables){
+        //     foreach ($this->process_availables($request) as $available) {
+        //         $consultant->availables()->create($available);
+        //     }
+        // }
 
         return redirect()->back()->with('success','تمت الإضافة بنجاح');
 

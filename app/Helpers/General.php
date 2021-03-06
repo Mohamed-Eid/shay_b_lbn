@@ -83,6 +83,26 @@ function input_has_error($field , $errors){
     return $errors->has($field) ? 'is-invalid' : '';
 }
 
+function week_days() {
+    return ['Sunday','Monday', 'Tuesday', 'Wednesday','Thursday','Friday','Saturday'];
+}
+
+function get_hours($num){
+    if($num % 2 == 0) {
+        return ($num/2).':'.'00';
+    }
+    return (int)($num/2).':'.'30';
+}
+
+function get_current_day_index(){
+    $current_date = date('d-m-Y');
+    $day_index = (int)date("d",strtotime($current_date));
+    return (int)date("d",strtotime($current_date));
+}
+
+function convertNumberToDay($number) {
+    return week_days()[$number]; 
+}
 
 function discount($price,$discount)
 {

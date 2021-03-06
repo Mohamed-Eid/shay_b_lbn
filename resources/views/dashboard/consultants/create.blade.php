@@ -216,6 +216,47 @@
                             </div>
                         </div>
 
+
+                        <div class="kt-portlet">
+                            <div class="kt-portlet__head">
+                                <div class="kt-portlet__head-label">
+                                    <h3 class="kt-portlet__head-title">
+                                        Adjusted Pills
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="kt-portlet__body">
+                                <ul class="nav nav-pills nav-fill" role="tablist">
+                                    @foreach (week_days() as $index => $day)
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ $index == 0 ? 'active' : '' }}" data-toggle="tab" href="#day-{{ $day }}"> {{ $day }}</a>
+                                    </li>
+                                    @endforeach
+                                </ul>
+                                <div class="tab-content">
+                                    @foreach (week_days() as $index => $day)
+                                    <div class="tab-pane {{ $index == 0 ? 'active' : '' }}" id="day-{{ $day }}" role="tabpanel">
+                                        <div class="form-group">
+                                            <div class="col-12">
+                                                <div class="kt-checkbox-inline">
+                                                    @for ($i = 0; $i <= 46; $i++)
+                                                    <label class="kt-checkbox">
+                                                        <input type="checkbox" name="days[{{ $day }}][]" value="{{ get_hours($i)  }}">   {{ get_hours($i)  }}
+                                                        <span></span>
+                                                    </label>                                                                                                              
+                                                    @endfor
+                                                </div>
+                                            </div>
+                                        </div>                                    
+                                    </div>                                        
+                                    @endforeach
+
+
+                                </div>
+                            </div>
+                        </div>
+
+{{-- 
                         <div class="kt-portlet__body col-12">
 
                             <div class="kt-form__section kt-form__section--first">
@@ -267,7 +308,7 @@
                                 </div>
                             
                             </div>
-                        </div>
+                        </div> --}}
 
 
 
