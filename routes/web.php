@@ -16,9 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 //AdminPanel Routes
 
-
-
-
 Route::group(['prefix' => 'admin'], function () {
     Auth::routes();
     Route::middleware(['auth'])->group(function () {
@@ -42,6 +39,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('courses.lessons', 'Dashboard\LessonController');
         
         Route::resource('features', 'Dashboard\FeatureController');
+        
+        Route::resource('visits', 'Dashboard\VisitController');
+        
+        Route::resource('clients', 'Dashboard\ClientController');
         
         Route::resource('events', 'Dashboard\EventController');
         Route::resource('event_features', 'Dashboard\EventFeatureController');
